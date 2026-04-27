@@ -1,0 +1,5 @@
+CS450 Assignment 6 WriteUp
+
+- I added symbolic link support to xv6 by creating the T_SYMLINK inode type and adding the symlink() system call. The system call creates a symlink inode and stores the target path inside it.
+- I modified sys_open() so it follows symbolic links when opening files. A depth limit of 10 prevents infinite loops from cyclic links.
+- I tested the assignment with testsymlink.c. The test passed for reading through a symlink and safely failing on a symlink cycle.
